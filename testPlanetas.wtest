@@ -1,0 +1,21 @@
+import planetas.*
+
+describe "primeras pruebas" {
+  const property ricardo = new Persona(edad = 18)
+  const property eliana = new Persona(edad = 17)
+  const property roberto = new Persona(edad = 40)
+  const property humberto = new Persona(edad = 60)
+  const property muralla1 = new Muralla(longitud = 5)
+  const property muralla2 = new Muralla(longitud = 3)
+  const property museo = new Museo(superficie = 12, indiceImportancia = 2)
+  const property planeta1 = new Planeta(personas = [ricardo, eliana,roberto,humberto], construcciones = [museo, muralla1,muralla2])
+  const property planeta2 = new Planeta(personas = [ricardo, eliana,roberto,humberto], construcciones = [muralla1, muralla2])
+
+  test "primer test" {
+    assert.equals(3, planeta1.delegacionDiplomatica().size())
+    assert.that(planeta1.esValioso())
+  }
+  test "segundo test"{
+    assert.notThat(planeta2.esValioso())
+  }
+}
